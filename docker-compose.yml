@@ -1,0 +1,9 @@
+services:
+  develop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mvillasante/opencoder:latest
+    command: bash
+    volumes:
+      - $PWD:/workdir
