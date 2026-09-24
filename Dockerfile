@@ -3,8 +3,8 @@ WORKDIR /workdir
 # Instala opencode
 RUN apt update && apt upgrade -y
 RUN apt install -y lsof curl git
-RUN curl -fsSL https://opencode.ai/install | bash
-RUN export PATH=$PATH:$HOME/.opencode/bin
+RUN curl -fsSL https://opencode.ai/v2/install | bash
+ENV PATH="/root/.opencode/bin:${PATH}"
 # Instala agentes y config personalizada
 RUN git clone https://github.com/mvillasante/opencode_agents.git /tmp/oa \
     && mkdir -p /root/.config/opencode \
